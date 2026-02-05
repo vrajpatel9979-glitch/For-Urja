@@ -48,7 +48,7 @@ function showYesEnding() {
 
   resultTitle.innerText = "Happy Valentine’s Day My Babygirl💕";
   resultText.innerText =
-    "Now come here… I need one hug + 100 kisses. Non-negotiable 😏💖";
+    "Now come here… I need one hug + 100 kisses. Non-negotiable 😏💖  I love youu bo badhuu💗💗😘😘";
 
   yesBtn.classList.add("hidden");
   noBtn.classList.add("hidden");
