@@ -112,3 +112,12 @@ button:active {
   from { transform: translateY(0) rotate(45deg); }
   to { transform: translateY(-120vh) rotate(45deg); opacity: 0; }
 }
+/* Force all text white */
+body, h1, h2, p, .mini, #subline, #resultText, #resultTitle {
+  color: white !important;
+}
+
+/* Force all text white */
+body, h1, h2, p, .mini, #subline, #resultText, #resultTitle {
+  color: white !important;
+}
