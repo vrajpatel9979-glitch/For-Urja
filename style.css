@@ -1,4 +1,4 @@
-/* Full screen background */
+/* Full screen background using photo.jpg */
 body {
   margin: 0;
   height: 100vh;
@@ -6,14 +6,14 @@ body {
   overflow: hidden;
 
   background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-              url("photo2.jpg") no-repeat center center/cover;
+              url("photo.jpg") no-repeat center center/cover;
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Glass card */
+/* Card */
 .card {
   width: min(380px, 90vw);
   background: rgba(0,0,0,0.45);
@@ -27,9 +27,12 @@ body {
 
 /* Force all text white */
 .card h1,
-.card p,
 .card h2,
-.card .mini {
+.card p,
+.mini,
+#subline,
+#resultText,
+#resultTitle {
   color: #ffffff;
 }
 
@@ -57,7 +60,6 @@ button:active {
 .yes {
   background: #ff2e63;
   color: white;
-  box-shadow: 0 6px 15px rgba(255,46,99,0.4);
 }
 
 .no {
@@ -66,7 +68,7 @@ button:active {
   border: 2px solid #ff2e63;
 }
 
-/* Result box */
+/* Result */
 .hidden {
   display: none;
 }
@@ -78,7 +80,7 @@ button:active {
   background: rgba(255,46,99,0.2);
 }
 
-/* Floating hearts */
+/* Hearts */
 #hearts {
   position: fixed;
   inset: 0;
@@ -112,8 +114,6 @@ button:active {
   from { transform: translateY(0) rotate(45deg); }
   to { transform: translateY(-120vh) rotate(45deg); opacity: 0; }
 }
-/* Force all text white */
-body, h1, h2, p, .mini, #subline, #resultText, #resultTitle {
-  color: white !important;
-}
+
+
 
