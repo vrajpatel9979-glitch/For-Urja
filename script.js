@@ -8,7 +8,7 @@ const hearts = document.getElementById("hearts");
 
 let noCount = 0;
 
-// Floating hearts
+/* Hearts animation */
 function spawnHeart(extra = false) {
   const heart = document.createElement("div");
   heart.className = "heart";
@@ -27,7 +27,7 @@ function spawnHeart(extra = false) {
 
 setInterval(() => spawnHeart(false), 300);
 
-// Play music only on YES
+/* YES */
 yesBtn.addEventListener("click", () => {
   music.play();
   question.innerText = "Hehe… I knew it 😍💘";
@@ -42,7 +42,7 @@ yesBtn.addEventListener("click", () => {
   }
 });
 
-// NO button behavior
+/* NO */
 noBtn.addEventListener("click", () => {
   noCount++;
 
@@ -56,17 +56,14 @@ noBtn.addEventListener("click", () => {
 
   subline.innerText = lines[Math.min(noCount - 1, lines.length - 1)];
 
-  // Enlarge Yes button
   yesBtn.style.transform = `scale(${1 + noCount * 0.2})`;
 
-  // Move No button
   if (noCount >= 2) {
     noBtn.style.position = "fixed";
     noBtn.style.left = Math.random() * 80 + "%";
     noBtn.style.top = Math.random() * 80 + "%";
   }
 
-  // Force YES after many clicks
   if (noCount >= 5) {
     yesBtn.click();
   }
