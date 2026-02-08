@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>For You ❤️</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="hearts"></div>
+  <div id="hearts"></div>
 
-<div class="card">
-  <h1 id="question">Will you be my Valentine? 💘</h1>
-  <p id="subline">Be honest… but choose wisely 😏</p>
+  <div class="card">
 
-  <div class="btnRow">
-    <button id="yesBtn" class="yes">Yes 😍</button>
-    <button id="noBtn" class="no">No 🙈</button>
+    <!-- Photo changed to photo.jpg -->
+    <img class="photo" src="photo.jpg" alt="Her Photo" />
+
+    <h1 id="question">Will you be my Valentine? 💘</h1>
+    <p id="subline">Be honest… but choose wisely 😏</p>
+
+    <div class="btnRow">
+      <button id="yesBtn" class="yes">Yes 😍</button>
+      <button id="noBtn" class="no">No 🙈</button>
+    </div>
+
+    <div id="result" class="hidden">
+      <h2 id="resultTitle">Happy Valentine’s Day 💕</h2>
+      <p id="resultText">I love you bo badhuu 💗💗😘😘</p>
+      <p class="mini">Now you’re officially my Valentine 💞</p>
+    </div>
+
+    <!-- Music changed to music.mp3 -->
+    <audio id="music" src="music.mp3" loop></audio>
+
+    <p class="tip">Music will play when you press YES 🎵</p>
+
   </div>
 
-  <div id="result" class="hidden">
-    <h2 id="resultTitle">Happy Valentine’s Day 💕</h2>
-    <p id="resultText">I love you bo badhuu 💗💗😘😘</p>
-    <p class="mini">Now you’re officially my Valentine 💞</p>
-  </div>
-
-  <audio id="music" src="music2.mp3" loop></audio>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
