@@ -1,24 +1,99 @@
-/* Background photo full screen */
+/* Background */
 body {
   margin: 0;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
   font-family: Arial, sans-serif;
+  overflow-x: hidden;
 
-  /* dark overlay + background image */
-  background-image:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url("photo.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: linear-gradient(135deg, #ffd6e7, #ffb6c9);
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Hearts behind the card */
+/* White card – mobile friendly */
+.card {
+  width: min(420px, 95vw);   /* slightly wider but fits phone */
+  max-height: 92vh;          /* prevent overflow */
+  overflow-y: auto;          /* scroll if needed */
+
+  padding: 18px;
+  border-radius: 18px;
+  text-align: center;
+
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+  position: relative;
+  z-index: 2;
+}
+
+/* Photo inside card */
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+/* Text sizes for mobile */
+.card h1 {
+  font-size: 22px;
+  margin: 8px 0;
+  color: #c2185b;
+}
+
+.card h2 {
+  color: #c2185b;
+}
+
+.card p {
+  font-size: 15px;
+  margin: 6px 0;
+}
+
+/* Buttons */
+.btnRow {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+button {
+  padding: 10px 16px;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.yes {
+  background: #ff2e63;
+  color: white;
+}
+
+.no {
+  background: white;
+  color: #ff2e63;
+  border: 2px solid #ff2e63;
+}
+
+/* Result box */
+.hidden {
+  display: none;
+}
+
+#result {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255,46,99,0.15);
+}
+
+/* Floating hearts */
 #hearts {
   position: fixed;
   inset: 0;
@@ -26,73 +101,12 @@ body {
   z-index: 1;
 }
 
-/* Card MUST be above hearts */
-.card {
-  width: min(380px, 90vw);
-  padding: 22px;
-  border-radius: 18px;
-  text-align: center;
-
-  background: rgba(0,0,0,0.45);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-
-  position: relative;
-  z-index: 2;
-
-  color: #fff;
-}
-
-/* Force all text white */
-.card h1,
-.card h2,
-.card p,
-.mini,
-#subline,
-#resultText,
-#resultTitle {
-  color: #fff !important;
-}
-
-/* Buttons */
-.btnRow {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  margin-top: 15px;
-}
-
-button {
-  padding: 12px 18px;
-  font-size: 16px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.15s ease;
-}
-
-button:active { transform: scale(0.95); }
-
-.yes { background: #ff2e63; color: #fff; }
-.no  { background: #fff; color: #ff2e63; border: 2px solid #ff2e63; }
-
-/* Result */
-.hidden { display: none; }
-
-#result {
-  margin-top: 15px;
-  padding: 14px;
-  border-radius: 14px;
-  background: rgba(255,46,99,0.2);
-}
-
-/* Hearts shape */
 .heart {
   position: absolute;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   transform: rotate(45deg);
-  opacity: 0.85;
+  opacity: 0.8;
   animation: floatUp linear forwards;
 }
 
@@ -100,15 +114,25 @@ button:active { transform: scale(0.95); }
 .heart::after {
   content: "";
   position: absolute;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   background: inherit;
   border-radius: 50%;
 }
-.heart::before { left: -9px; }
-.heart::after  { top: -9px; }
+
+.heart::before { left: -8px; }
+.heart::after { top: -8px; }
 
 @keyframes floatUp {
   from { transform: translateY(0) rotate(45deg); }
-  to   { transform: translateY(-120vh) rotate(45deg); opacity: 0; }
+  to { transform: translateY(-120vh) rotate(45deg); opacity: 0; }
+}
+
+/* Smooth scrolling inside card */
+.card::-webkit-scrollbar {
+  width: 6px;
+}
+.card::-webkit-scrollbar-thumb {
+  background: #ffb6c9;
+  border-radius: 10px;
 }
