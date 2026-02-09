@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>For You ❤️</title>
-  <link rel="stylesheet" href="style.css?v=1">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="hearts"></div>
+  <div id="hearts"></div>
 
-<div class="card">
-  <img src="photo.jpg" class="profile-pic" alt="Our photo">
-  <h1 id="question">Will you be my Valentine? 💘</h1>
-  <p id="subline">Be honest… but choose wisely 😏</p>
+  <div class="card">
+    <img class="photo" src="photo.jpg" alt="Her Photo" />
 
-  <div class="btnRow">
-    <button id="yesBtn" class="yes">Yes 😍</button>
-    <button id="noBtn" class="no">No 🙈</button>
+    <h1 id="question">Will you be my Valentine? 💘</h1>
+    <p id="subline">Be honest… but choose wisely 😏</p>
+
+    <div class="btnRow">
+      <button id="yesBtn" class="yes">Yes 😍</button>
+      <button id="noBtn" class="no">No 🙈</button>
+    </div>
+
+    <div id="result" class="hidden">
+      <h2 id="resultTitle"></h2>
+      <p id="resultText"></p>
+      <p class="mini">Now you’re officially my Valentine 💞</p>
+    </div>
+
+    <audio id="music" src="music.mp3" loop></audio>
+    <p class="tip">Tip: Music starts after your first tap (phone rule).</p>
   </div>
 
-  <div id="result" class="hidden">
-    <h2 id="resultTitle">Happy Valentine’s Day My Babygirl😘💕</h2>
-    <p id="resultText">I love you bo badhuu 💗💗😘😘</p>
-    <p class="mini">Now you’re officially my Valentine 💞</p>
-  </div>
-
-  <!-- Original music file -->
-  <audio id="music" src="music.mp3" loop></audio>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
