@@ -46,7 +46,7 @@ function showYesEnding() {
   subline.innerText = "You just made my whole day.";
   result.classList.remove("hidden");
 
-  resultTitle.innerText = "Happy Valentine’s Day 💕";
+  resultTitle.innerText = "Happy Valentine’s Day My Babygirl💕";
   resultText.innerText =
     "Now come here… I need one hug + 100 kisses. Non-negotiable 😏💖";
 
