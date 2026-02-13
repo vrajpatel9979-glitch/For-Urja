@@ -1,138 +1,37 @@
-/* Background */
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-  overflow-x: hidden;
-
+/* Password screen */
+.lockScreen {
+  position: fixed;
+  inset: 0;
   background: linear-gradient(135deg, #ffd6e7, #ffb6c9);
-
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 999;
 }
 
-/* White card – mobile friendly */
-.card {
-  width: min(420px, 95vw);   /* slightly wider but fits phone */
-  max-height: 92vh;          /* prevent overflow */
-  overflow-y: auto;          /* scroll if needed */
-
-  padding: 18px;
-  border-radius: 18px;
+.lockBox {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
   text-align: center;
-
-  background: rgba(255,255,255,0.95);
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-
-  position: relative;
-  z-index: 2;
+  width: min(300px, 90vw);
 }
 
-/* Photo inside card */
-.card img {
-  width: 100%;
-  height: auto;
-  border-radius: 14px;
-  margin-bottom: 10px;
-  object-fit: cover;
+.lockBox input {
+  width: 90%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
-/* Text sizes for mobile */
-.card h1 {
-  font-size: 22px;
-  margin: 8px 0;
-  color: #c2185b;
-}
-
-.card h2 {
-  color: #c2185b;
-}
-
-.card p {
-  font-size: 15px;
-  margin: 6px 0;
-}
-
-/* Buttons */
-.btnRow {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
+.lockBox button {
   margin-top: 12px;
-}
-
-button {
-  padding: 10px 16px;
-  font-size: 15px;
+  padding: 10px 18px;
+  background: #ff2e63;
+  color: white;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-}
-
-.yes {
-  background: #ff2e63;
-  color: white;
-}
-
-.no {
-  background: white;
-  color: #ff2e63;
-  border: 2px solid #ff2e63;
-}
-
-/* Result box */
-.hidden {
-  display: none;
-}
-
-#result {
-  margin-top: 12px;
-  padding: 12px;
-  border-radius: 12px;
-  background: rgba(255,46,99,0.15);
-}
-
-/* Floating hearts */
-#hearts {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.heart {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  transform: rotate(45deg);
-  opacity: 0.8;
-  animation: floatUp linear forwards;
-}
-
-.heart::before,
-.heart::after {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  background: inherit;
-  border-radius: 50%;
-}
-
-.heart::before { left: -8px; }
-.heart::after { top: -8px; }
-
-@keyframes floatUp {
-  from { transform: translateY(0) rotate(45deg); }
-  to { transform: translateY(-120vh) rotate(45deg); opacity: 0; }
-}
-
-/* Smooth scrolling inside card */
-.card::-webkit-scrollbar {
-  width: 6px;
-}
-.card::-webkit-scrollbar-thumb {
-  background: #ffb6c9;
-  border-radius: 10px;
 }
