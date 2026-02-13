@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>For You ❤️</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- PASSWORD SCREEN -->
+<div id="lockScreen" class="lockScreen">
+  <div class="lockBox">
+    <h2>Private Surprise ❤️</h2>
+    <p>Enter the secret password</p>
+    <input type="password" id="passwordInput" placeholder="Password">
+    <button onclick="checkPassword()">Open</button>
+    <p id="errorMsg" style="color:red; display:none;">Wrong password</p>
+  </div>
+</div>
+
+<!-- MAIN CONTENT (hidden first) -->
+<div id="mainContent" style="display:none;">
+
   <div id="hearts"></div>
 
   <div class="card">
-    <img class="photo" src="photo.jpg" alt="Her Photo" />
+    <div class="photoWrap">
+      <img src="photo.jpg" alt="Photo">
+    </div>
 
     <h1 id="question">Will you be my Valentine? 💘</h1>
     <p id="subline">Be honest… but choose wisely 😏</p>
@@ -22,15 +38,33 @@
     </div>
 
     <div id="result" class="hidden">
-      <h2 id="resultTitle"></h2>
-      <p id="resultText"></p>
+      <h2 id="resultTitle">Happy Valentine’s Day 💕</h2>
+      <p id="resultText">I love you bo badhuu 💗💗😘😘</p>
       <p class="mini">Now you’re officially my Valentine 💞</p>
     </div>
 
     <audio id="music" src="music.mp3" loop></audio>
-    <p class="tip">Tip: Music starts after your first tap (phone rule).</p>
   </div>
 
-  <script src="script.js"></script>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+// CHANGE THIS PASSWORD
+const correctPassword = "28012024";
+
+function checkPassword() {
+  const input = document.getElementById("passwordInput").value;
+
+  if (input === correctPassword) {
+    document.getElementById("lockScreen").style.display = "none";
+    document.getElementById("mainContent").style.display = "block";
+  } else {
+    document.getElementById("errorMsg").style.display = "block";
+  }
+}
+</script>
+
 </body>
 </html>
